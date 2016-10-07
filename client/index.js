@@ -2,18 +2,16 @@ const P2P = require('socket.io-p2p');
 const io = require('socket.io-client');
 const socket = io();
 
-const opts = { autoUpgrade: true };
-const p2p = new P2P(socket, opts);
+// const opts = { autoUpgrade: false };
+const p2p = new P2P(socket);
+// const p2p = new P2P(socket, opts, () => {
+//   console.log('Initiating connection.');
+// });
 
-p2p.on('ready', () => {
-  // p2p.usePeerConnection = true;
-  console.log('client ready');
-  p2p.upgrade();
-});
+// If autoUpdate = false, need to manually transition to a WebRTC connection
+// p2p.usePeerConnection = true;
+// p2p.upgrade();
 
-p2p.on('socket-connected', (data) => {
-  console.log(data);
-});
 
 p2p.on('send-message', (data) => {
   console.log('received outgoing', data)
@@ -30,6 +28,7 @@ function sendMessage(e) {
     const message = $('#message').val();
     const text = `${user}: ${message}`;
 
+    console.log('sent message', text);
     $('#message-container').append('<br>', text);
     p2p.emit('send-message', { message, user });
   }
@@ -37,4 +36,4 @@ function sendMessage(e) {
 
 // Review:
 // 1 - server setup with socket.io-p2p
-// 2 - emitting and broadcasting messages to all clients - messages must have the same name
+// 2 - emitting and broadcasting messages to all clients w/ sockets - messages must have the same name
