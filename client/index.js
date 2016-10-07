@@ -13,10 +13,8 @@ const p2p = new P2P(socket);
 // p2p.upgrade();
 
 
-p2p.on('send-message', (data) => {
-  console.log('received outgoing', data)
-  const text = `${data.user}: ${data.message}`;
-  $('#message-container').append('<br>', text);
+p2p.on('send-message', (post) => {
+  $('#message-container').append('<br>', post);
 });
 
 $('#message').on('keydown', sendMessage);
@@ -26,11 +24,10 @@ function sendMessage(e) {
   if (e.key === 'Enter') {
     const user = $('#user').val();
     const message = $('#message').val();
-    const text = `${user}: ${message}`;
+    const post = `${user}: ${message}`;
 
-    console.log('sent message', text);
-    $('#message-container').append('<br>', text);
-    p2p.emit('send-message', { message, user });
+    $('#message-container').append('<br>', post);
+    p2p.emit('send-message', post);
   }
 }
 
