@@ -27,7 +27,7 @@ Distributed computing is simply a network of devices that communicate to work in
 
 ## <a name="install"></a> Installation
 
-In your terminal go ahead and install dethread via npm:
+In the terminal, install dethread via npm:
 ```javascript
 npm install --S dethread
 ``` 
@@ -112,7 +112,6 @@ Web Workers are used to simulate a multithread environment to enable concurrent 
 socket.emit('clientReady', numWorkers)
 ```
 If numWorkers is not supplied, it defaults to 1.
----
 ## <a name="md5"></a> Examples and Use Cases 
 
 [Example:](http://dethread.io/)
