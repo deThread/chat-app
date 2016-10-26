@@ -64,8 +64,8 @@ dethread.failedTasks
 ``` 
 ## <a name="gettingStarted"></a> Getting Started
 
-The DeThread library is built on top of the socket.io library.  
-In your server, simply require the socket.io and dethread modules.
+The DeThread library is built on top of the socket.io library.  In your server, simply require the socket.io and dethread modules.
+<br/>
 <br/>
 Getting started is easy, first call dethread.start. 
 ```javascript
@@ -80,9 +80,7 @@ const clientInit = {...}
 dethread.start(io, tasks, clientInit)
 ```
 To create a custom socket event handler, use dethread.on.
-To emit a response back to a client, you must use the socketID to retrieve the corresponding socket client.
-To do this, simply reference the socket object using dethread.connections[socketID].  
-This will return a socket object to which you can emit.
+To emit a response back to a client, you must use the socketID to retrieve the corresponding socket client.  To do this, simply reference the socket object using dethread.connections[socketID].  This will return a socket object to which you can emit.
 ```javascript
 
 dethread.on('inEvent', function(socketID, ...Params){
@@ -90,11 +88,9 @@ dethread.on('inEvent', function(socketID, ...Params){
 })
 ```
 Task distribution with dethread is easy. After calling dethread.start, task distribution and failure handling are both
-managed internally.  There is no need for a developer to reference dethread.connections, dethread.socketPool, dethread.taskQueue,
-dethread.taskCompletionIndex, or dethread.failedTasks for simple applications.  However, these properties are exposed and accessible
-to the developer for advanced processes.
+managed internally.  There is no need for a developer to reference dethread.connections, dethread.socketPool, dethread.taskQueue, dethread.taskCompletionIndex, or dethread.failedTasks for simple applications.  However, these properties are exposed and accessible to the developer for advanced processes.
 
-## <a name="clientSide></a> Task Handling on the Client
+## <a name="clientSide"></a> Task Handling on the Client
 Communication between client and servers is handled with the socket.io interface. To handle and emit socket events,
 use the [socket.io client API](http://socket.io/docs/).
 Before the client can receive task from the server, the client must emit a clientReady message.
@@ -108,11 +104,8 @@ To terminate and resolve a distributed computing process, specifify the followin
 ```javascript
 socket.emit('processComplete', data)
 ```
-### <a name="webWorkers></a> Task Distribution with Web Workers
-Web Workers are used to simulate a multithread environment to enable concurrent processing. The client may receive multiple tasks from the
-server to process. 
-To specifiy the number of workers to use on a client pass in a number as a second parameter to clientReady message.
-Use navigator.hardwareConcurrency to determine the maximum number of Web Workers a client can handle(number of cores). 
+### <a name="webWorkers"></a> Task Distribution with Web Workers
+Web Workers are used to simulate a multithread environment to enable concurrent processing. The client may receive multiple tasks from the server to process. To specifiy the number of workers to use on a client pass in a number as a second parameter to clientReady message. Use navigator.hardwareConcurrency to determine the maximum number of Web Workers a client can handle(number of cores). 
 
 ```javascript
 
