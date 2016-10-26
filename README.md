@@ -9,12 +9,13 @@ We would love the opportunity to dethread your problems.
 
 
 ## Contents 
-* [Background on Distribued Computing](#background)
-* [Installation](#install)
-* [API Documentation](#docs)
-* [Getting Started](#gettingStarted)
-* [Task Handling on the Client](#clientSide)
-* [MD5 Decryption Example](#md5)
+1. [Background on Distribued Computing](#background)
+2. [Installation](#install)
+3. [API Documentation](#docs)
+4. [Getting Started](#gettingStarted)
+5. [Task Handling on the Client](#clientSide)
+6. [MD5 Decryption Example](#md5)
+7. [Contributors](#contributors)
 
 
 ## <a name="background"></a> Background on Distributed Computing
@@ -112,3 +113,8 @@ If numWorkers is not supplied, it defaults to 1.
 [Example:](http://dethread.io/)
 We used MD5 hash decryption as an example to illustrate the power of distributed computing.  Not only does DeThread allow for users to distribute a problem across multiple bot-net nodes, it distributes the problem further on each connected device. 
 The problem is chunked once before it is distributed, then it is chunked again on the client and distributed to Web Workers dependent upon the client's hardware.
+
+## <a name="contributors"></a> Contributors 
+* [Bryan Yee](https://github.com/bryanyee)
+* [Shawn Southwell](https://github.com/shawn-southwell)
+* [Daniel Lao](https://github.com/Dlaosb)
