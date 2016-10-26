@@ -64,33 +64,33 @@ dethread.failedTasks
 ``` 
 ## <a name="gettingStarted"></a> Getting Started
 
-The DeThread library is built on top of the socket.io library.  In your server, simply require the socket.io and dethread modules.
+The DeThread library is built on top of the socket.io library. 
+<br/>  
+In your server, simply require the socket.io and dethread modules.
+<br/>
+<br/>
 Getting started is easy, first call dethread.start. 
 ```javascript
 const http = require('http')
 const io = require('socket.io')(http)
 
 const tasks = [...]
+  //   An array of the total set of all task chunks.
 const clientInit = {...}
+  // An options object to provide data to the clients on initial socket connection.
 
 dethread.start(io, tasks, clientInit)
 ```
-tasks [...]: 
-  An array of the total set of all task chunks.
-clientInit {...}:
-  An options object to provide data to the clients on initial socket connection.
-
+To create a custom socket event handler, use dethread.on.
+To emit a response back to a client, you must use the socketID to retrieve the corresponding socket client.
+To do this, simply reference the socket object using dethread.connections[socketID].  
+This will return a socket object to which you can emit.
 ```javascript
 
 dethread.on('inEvent', function(socketID, ...Params){
   dethread.connections[socketID].emit('outEvent', data)
 })
 ```
-To create a custom socket event handler, use dethread.on.
-To emit a response back to a client, you must use the socketID to retrieve the corresponding socket client.
-To do this, simply reference the socket object using dethread.connections[socketID].  
-This will return a socket object to which you can emit.
-
 Task distribution with dethread is easy. After calling dethread.start, task distribution and failure handling are both
 managed internally.  There is no need for a developer to reference dethread.connections, dethread.socketPool, dethread.taskQueue,
 dethread.taskCompletionIndex, or dethread.failedTasks for simple applications.  However, these properties are exposed and accessible
