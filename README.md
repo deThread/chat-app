@@ -8,7 +8,6 @@ If you are a DeThread user and would like to provide feed back on how we can imp
 We would love the opportunity to dethread your problems.
 
 
---- 
 ## Contents 
 * [Background on Distribued Computing](#background)
 * [Installation](#install)
@@ -17,13 +16,10 @@ We would love the opportunity to dethread your problems.
 * [Task Handling on the Client](#clientSide)
 * [MD5 Decryption Example](#md5)
 
---- 
 
 ## <a name="background"></a> Background on Distributed Computing
 Distributed computing is a processing model that utilizes a network of devices that work in-parallel in order to reduce the amount of time it takes to complete a task. Distributed computing has traditionally utilized low-level languages, which are often more performant.  However, JavaScript offers several unique advantages, as the language of the web. For that reason, any device equipped with a browser may contribute to a distributed process.  No downloading required, simply access a link. 
 
-
---- 
 
 ## <a name="install"></a> Installation
 
@@ -31,7 +27,6 @@ In the terminal, install dethread via npm:
 ```javascript
 npm install --S dethread
 ``` 
-
 
 ## <a name="docs"></a> API Documentation 
 
