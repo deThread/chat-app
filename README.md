@@ -1,9 +1,9 @@
 # DeThread
 
-DeThread is an application library that allows a developer to do utilize the power of distributed computing in the web browser. 
+DeThread is an application library that enables distributed computing with JavaScript in the web browser. 
 
 If you are a DeThread user and would like to provide feed back on how we can improve, please
-[click here to leave some feedback](https://docs.google.com/forms/d/e/1FAIpQLSdRxi7h0A7A0YFU5Bmcj1nduDyMIPpE5H9zZzPCwHnAY7cgdQ/viewform)
+[click here to leave some feedback](https://docs.google.com/forms/d/e/1FAIpQLSdRxi7h0A7A0YFU5Bmcj1nduDyMIPpE5H9zZzPCwHnAY7cgdQ/viewform).
 
 We would love the opportunity to dethread your problems.
 
@@ -20,7 +20,7 @@ We would love the opportunity to dethread your problems.
 --- 
 
 ## <a name="background"></a> Background on Distributed Computing
-Distributed computing is simply a network of devices that communicate to work in-parallel in order to accomplish a singular task. Other lower level languages may seem more well suited to solve resource intensive problems. However, in the browser, there is only one language that comes to mind over others. JavaScript **_is_** the language of the web, and for that reason, any device that is equipped with a browser may be able processing power to solving a task.  No downloading required, simply access a link. 
+Distributed computing is a processing model that utilizes a network of devices that work in-parallel in order to reduce the amount of time it takes to complete a task. Distributed computing has traditionally utilized low-level languages, which are often more performant.  However, JavaScript offers several unique advantages, as the language of the web. For that reason, any device equipped with a browser may contribute to a distributed process.  No downloading required, simply access a link. 
 
 
 --- 
