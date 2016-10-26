@@ -64,10 +64,8 @@ dethread.failedTasks
 ``` 
 ## <a name="gettingStarted"></a> Getting Started
 
-The DeThread library is built on top of the socket.io library. 
-<br/>  
+The DeThread library is built on top of the socket.io library.  
 In your server, simply require the socket.io and dethread modules.
-<br/>
 <br/>
 Getting started is easy, first call dethread.start. 
 ```javascript
@@ -75,7 +73,7 @@ const http = require('http')
 const io = require('socket.io')(http)
 
 const tasks = [...]
-  //   An array of the total set of all task chunks.
+  // An array of the total set of all task chunks.
 const clientInit = {...}
   // An options object to provide data to the clients on initial socket connection.
 
