@@ -30,37 +30,38 @@ Distributed computing is simply a network of devices that communicate to work in
 In your terminal go ahead and install dethread via npm:
 ```javascript
 npm install --S dethread
-```` 
+``` 
 
 
 ## <a name="docs"></a> API Documentation 
 
-Methods : 
----
+###Methods 
+
+```javascript
 dethread.start(io, tasks, clientInit) 
-  Initializes dethread distributed computing process.
+  // Initializes dethread distributed computing process.
 dethread.on(event name, callback)
-  Adds custom socket event handlers.
+  // Adds custom socket event handlers.
 dethread.closeProcess()
-  Terminate socket connections and reset server state.
----
+  // Terminate socket connections and reset server state.
+``` 
 
-Properties : 
----
+###Properties
+
+```javascript
 dethread.state
-  Object to contain application state.
+  // Object to contain application state.
 dethread.connections
-  Array of current connected socket-clients
+  // Array of current connected socket-clients
 dethread.socketPool
-  Array of current, non-working socket-clients, referenced by ID.
+  // Array of current, non-working socket-clients, referenced by ID.
 dethread.taskQueue
-  Array of total set of all tasks.
+  // Array of total set of all tasks.
 dethread.taskCompletionIndex
-  Index that tracks sent tasks.
+  // Index that tracks sent tasks.
 dethread.failedTasks
-  Array of current references to failed tasks, referenced by taskQueue index.
----
-
+  // Array of current references to failed tasks, referenced by taskQueue index.
+``` 
 ## <a name="gettingStarted"></a> Getting Started
 
 The DeThread library is built on top of the socket.io library.  In your server, simply require the socket.io and dethread modules.
